@@ -1,12 +1,12 @@
 class Solution {
 public:
     double average(vector<int>& salary) {
-        sort(salary.begin(),salary.end());
-        int sum=0,i,n=salary.size();
-        for(i=1;i<n-1;i++){
+        int sum=0,i,n=salary.size(),mini=INT_MAX,maxa=0;
+        for(i=0;i<n;i++){
             sum+=salary[i];
+            mini=min(mini,salary[i]);
+            maxa=max(maxa,salary[i]);
         }
-        cout<<sum<<endl;
-        return (double)sum / (double) (n-2) ;
+        return (double)(sum-maxa-mini)/ (double) (n-2) ;
     }
 };
