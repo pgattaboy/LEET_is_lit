@@ -1,15 +1,16 @@
 class Solution {
 public:
     bool areAlmostEqual(string s1, string s2) {
-        int x,y,c=0;
+        int c=0;
+        int a[2];
         for(int i=0;i<s1.size();i++){
             if(s1[i]!=s2[i]){
                 c++;
                 if(c==1){
-                    x=i;
+                    a[c-1]=i;
                 }
                 else if(c==2){
-                    y=i;
+                    a[c-1]=i;
                 }
                 else{
                     return false;
@@ -18,7 +19,7 @@ public:
         }
         if(c==0)
                 return true;
-            else if(c==2 && s1[y]==s2[x] && s1[x]==s2[y])
+            else if(c==2 && s1[a[1]]==s2[a[0]] && s1[a[0]]==s2[a[1]])
                 return true;
             return false;
     }
