@@ -1,8 +1,8 @@
 class Solution {
 public:
     bool areAlmostEqual(string s1, string s2) {
-        int i,x,y,c=0;
-        for(i=0;i<s1.size();i++){
+        int x,y,c=0;
+        for(int i=0;i<s1.size();i++){
             if(s1[i]!=s2[i]){
                 c++;
                 if(c==1){
