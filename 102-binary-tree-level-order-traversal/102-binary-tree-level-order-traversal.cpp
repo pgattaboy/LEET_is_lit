@@ -14,11 +14,12 @@ public:
     vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>> ans;
         queue<TreeNode* > q;
+         vector<int>temp;
         if(root!=nullptr){
             q.push(root);
             TreeNode* cur;
             while(!q.empty()){
-                vector<int>temp;
+               temp.clear();
                 int n=q.size();
                 for(int i=0;i<n;i++){
                      cur=q.front();
